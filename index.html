@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project 1</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>My tasks</h1>
+                <p class="subtitle">A small to-do list</p>
+            </header>
+
+            <section class="add-section" aria-labelledby="addHeading">
+                <h2 id="addHeading" class="visually-hidden">Add task</h2>
+
+                <form id="todoForm" novalidate>
+                    <div class="field">
+                        <label for="taskInput">New task</label>
+                        <input type="text" id="taskInput" name="task" placeholder="e.g. Water my plants" aria-describedby="taskError">
+                        <span id="taskError" class="error" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit">Add task</button>
+                </form>
+            </section>
+
+            <section class="list-section" aria-labelledby="listHeading">
+                <h2 id="listHeading" class="visually-hidden">Your tasks</h2>
+
+                <div class="list-toolbar">
+                    <p id="taskCounter">0 open tasks</p>
+
+                    <div class="filters" role="group" aria-label="Filter tasks">
+                        <button type="button" class="filter-button active" data-filter="all">All</button>
+                        <button type="button" class="filter-button" data-filter="active">Active</button>
+                        <button type="button" class="filter-button" data-filter="completed">Complete</button>
+                    </div>
+                </div>
+
+                <ul id="taskList" class="task-list"></ul>
+
+                <p id="emptyMessage" class="empty-message">No tasks yet - add one above to get started.</p>
+            </section>
+            <footer>
+                <p>Your tasks are saved in this browser only, using localStorage.</p>
+            </footer>
+        </main>
+    </body>
+</html>
